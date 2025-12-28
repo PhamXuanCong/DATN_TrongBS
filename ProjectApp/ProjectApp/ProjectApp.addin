@@ -1,0 +1,15 @@
+﻿<RevitAddIns>
+    <AddIn Type="Application">
+        <Name>ProjectApp</Name>
+        <Assembly>ProjectApp\ProjectApp.dll</Assembly>
+        <AddInId>A0404EE0-5C88-479A-A05B-4B1F59108571</AddInId>
+        <FullClassName>ProjectApp.Application</FullClassName>
+        <VendorId>Development</VendorId>
+        <VendorDescription></VendorDescription>
+        <VendorEmail></VendorEmail>
+    </AddIn>
+    <ManifestSettings>
+        <UseRevitContext>False</UseRevitContext>
+        <ContextName>ProjectApp</ContextName>
+    </ManifestSettings>
+</RevitAddIns>
