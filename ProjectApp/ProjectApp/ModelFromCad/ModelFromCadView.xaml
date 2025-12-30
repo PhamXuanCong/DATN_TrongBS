@@ -15,54 +15,54 @@
 
             <Style x:Key="NiceButtonStyle" TargetType="Button">
                 <!-- Kích thước và font cơ bản -->
-                <Setter Property="Height" Value="28"/>
-                <Setter Property="MinWidth" Value="80"/>
-                <Setter Property="Padding" Value="10,0"/>
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Height" Value="28" />
+                <Setter Property="MinWidth" Value="80" />
+                <Setter Property="Padding" Value="10,0" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontWeight" Value="SemiBold" />
 
                 <!-- Màu sắc cơ bản -->
-                <Setter Property="Background" Value="#FF007ACC"/>
+                <Setter Property="Background" Value="#FF007ACC" />
                 <!-- xanh kiểu VS -->
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="BorderBrush" Value="#FF005A9E"/>
-                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="BorderBrush" Value="#FF005A9E" />
+                <Setter Property="BorderThickness" Value="1" />
 
                 <!-- Hiển thị chuột dạng tay -->
-                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Cursor" Value="Hand" />
 
                 <!-- Template -->
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
                             <Border x:Name="border"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="4"
-                            SnapsToDevicePixels="True">
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4"
+                                    SnapsToDevicePixels="True">
                                 <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"
-                                          RecognizesAccessKey="True"/>
+                                                  VerticalAlignment="Center"
+                                                  RecognizesAccessKey="True" />
                             </Border>
 
                             <ControlTemplate.Triggers>
                                 <!-- Hover -->
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="#FF1591E5"/>
+                                    <Setter TargetName="border" Property="Background" Value="#FF1591E5" />
                                 </Trigger>
 
                                 <!-- Pressed -->
                                 <Trigger Property="IsPressed" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="#FF0060A8"/>
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FF003F70"/>
+                                    <Setter TargetName="border" Property="Background" Value="#FF0060A8" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="#FF003F70" />
                                 </Trigger>
 
                                 <!-- Disabled -->
                                 <Trigger Property="IsEnabled" Value="False">
-                                    <Setter TargetName="border" Property="Background" Value="#FFE0E0E0"/>
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFB0B0B0"/>
-                                    <Setter Property="Foreground" Value="#FF707070"/>
+                                    <Setter TargetName="border" Property="Background" Value="#FFE0E0E0" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFB0B0B0" />
+                                    <Setter Property="Foreground" Value="#FF707070" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -71,55 +71,55 @@
             </Style>
 
             <!-- ================= TEXTBOX ================= -->
-            <Style  TargetType="TextBox">
-                <Setter Property="Height" Value="28"/>
-                <Setter Property="Padding" Value="6,4"/>
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="Background" Value="White"/>
-                <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="BorderBrush" Value="#FFB8B8B8"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Style TargetType="TextBox">
+                <Setter Property="Height" Value="28" />
+                <Setter Property="Padding" Value="6,4" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="BorderBrush" Value="#FFB8B8B8" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
 
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="TextBox">
                             <Border x:Name="border"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="4">
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4">
                                 <ScrollViewer x:Name="PART_ContentHost"
-                                      Margin="0"
-                                      HorizontalScrollBarVisibility="Hidden"
-                                      VerticalScrollBarVisibility="Hidden"/>
+                                              Margin="0"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden" />
                             </Border>
 
                             <ControlTemplate.Triggers>
                                 <!-- Hover -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="border"
-                                    Property="BorderBrush"
-                                    Value="#FF7EB4EA"/>
+                                            Property="BorderBrush"
+                                            Value="#FF7EB4EA" />
                                 </Trigger>
 
                                 <!-- Focus -->
                                 <Trigger Property="IsKeyboardFocused" Value="True">
                                     <Setter TargetName="border"
-                                    Property="BorderBrush"
-                                    Value="#FF007ACC"/>
+                                            Property="BorderBrush"
+                                            Value="#FF007ACC" />
                                 </Trigger>
 
                                 <!-- Disable -->
                                 <Trigger Property="IsEnabled" Value="False">
-                                    <Setter TargetName="border" Property="Background" Value="#FFF2F2F2"/>
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFD0D0D0"/>
-                                    <Setter Property="Foreground" Value="#FF808080"/>
+                                    <Setter TargetName="border" Property="Background" Value="#FFF2F2F2" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFD0D0D0" />
+                                    <Setter Property="Foreground" Value="#FF808080" />
                                 </Trigger>
 
                                 <!-- Lỗi validation -->
                                 <Trigger Property="Validation.HasError" Value="True">
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFE51400"/>
+                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFE51400" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -127,13 +127,13 @@
                 </Setter>
             </Style>
 
-            <Style  TargetType="ComboBox">
-                <Setter Property="Height" Value="28"/>
-                <Setter Property="Background" Value="White"/>
-                <Setter Property="BorderBrush" Value="#C0C0C0"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="Padding" Value="6,0"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style TargetType="ComboBox">
+                <Setter Property="Height" Value="28" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="BorderBrush" Value="#C0C0C0" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Padding" Value="6,0" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
             </Style>
 
             <Style TargetType="TextBlock">
@@ -151,26 +151,24 @@
             <Button Content="GetData"
                     Click="ButtonBase_OnClick3"
                     Margin="0 0 6 0"
-                    Style="{StaticResource NiceButtonStyle}"
-            ></Button>
+                    Style="{StaticResource NiceButtonStyle}">
+            </Button>
             <Button Content="Create"
                     Click="ButtonBase_OnClick2"
                     Margin="0 0 6 0"
-                    Style="{StaticResource NiceButtonStyle}"
-            ></Button>
+                    Style="{StaticResource NiceButtonStyle}">
+            </Button>
             <Button Content="Close"
                     Click="ButtonBase_OnClick"
-                    Style="{StaticResource NiceButtonStyle}"
-                    ></Button>
+                    Style="{StaticResource NiceButtonStyle}">
+            </Button>
         </StackPanel>
         <TabControl x:Name="TabControl">
-            <TabItem Header="Column"
-                    
-                     >
+            <TabItem Header="Column">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="71*"/>
-                        <ColumnDefinition Width="353*"/>
+                        <ColumnDefinition Width="71*" />
+                        <ColumnDefinition Width="353*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -219,11 +217,13 @@
                     <GroupBox Header="Setting" Grid.ColumnSpan="2" Margin="0,349,0,0" Grid.RowSpan="2">
                         <StackPanel Margin="5">
                             <DockPanel>
-                                <TextBlock Width="80" 
-                     Text="Family Type:"></TextBlock>
+                                <TextBlock Width="80"
+                                           Text="Family Type:">
+                                </TextBlock>
                                 <ComboBox x:Name="cboColumnFamilyType"
                                           SelectionChanged="CboColumnFamilyType_OnSelectionChanged"
-                                          DisplayMemberPath="Name"></ComboBox>
+                                          DisplayMemberPath="Name">
+                                </ComboBox>
                             </DockPanel>
 
                             <Grid>
@@ -326,11 +326,13 @@
                     <GroupBox Grid.Row="1" Header="Setting">
                         <StackPanel Margin="5">
                             <DockPanel>
-                                <TextBlock Width="80" 
-                                    Text="Family Type:"></TextBlock>
+                                <TextBlock Width="80"
+                                           Text="Family Type:">
+                                </TextBlock>
                                 <ComboBox DisplayMemberPath="Name"
                                           SelectionChanged="CbFamilyBeamTypes_OnSelected"
-                                          x:Name="CbFamilyBeamTypes"></ComboBox>
+                                          x:Name="CbFamilyBeamTypes">
+                                </ComboBox>
                             </DockPanel>
 
                             <Grid>
@@ -341,13 +343,13 @@
 
                                 <DockPanel Margin="0 0 6 0">
                                     <TextBlock Width="80" Text="Width :"></TextBlock>
-                                    <ComboBox x:Name="cbBeamWidth"
-                                             ></ComboBox>
+                                    <ComboBox x:Name="cbBeamWidth"></ComboBox>
                                 </DockPanel>
                                 <DockPanel Grid.Column="1" Margin="0 6">
                                     <TextBlock Width="80" Text="Height :"></TextBlock>
-                                    <ComboBox 
-                                             x:Name="cbBeamHeight"></ComboBox>
+                                    <ComboBox
+                                        x:Name="cbBeamHeight">
+                                    </ComboBox>
                                 </DockPanel>
                             </Grid>
 
@@ -357,14 +359,21 @@
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <DockPanel 
-                                    
+                                <DockPanel
+
                                     Grid.ColumnSpan="2" Margin="0 6 0 0">
                                     <TextBlock Width="80" Text="Level :"></TextBlock>
                                     <ComboBox x:Name="cbBeamLevels" DisplayMemberPath="Name"></ComboBox>
                                 </DockPanel>
 
                             </Grid>
+
+                            <DockPanel
+
+                                Margin="0 6 0 0">
+                                <TextBlock Width="80" Text="Base Offset :"></TextBlock>
+                                <TextBox Text="0.0" x:Name="txtBeamOffset"></TextBox>
+                            </DockPanel>
                         </StackPanel>
                     </GroupBox>
                 </Grid>
@@ -406,10 +415,12 @@
                     <GroupBox Grid.Row="1" Header="Setting">
                         <StackPanel Margin="5">
                             <DockPanel>
-                                <TextBlock Width="80" 
-                              Text="Floor Type:"></TextBlock>
+                                <TextBlock Width="80"
+                                           Text="Floor Type:">
+                                </TextBlock>
                                 <ComboBox x:Name="cbFloorType"
-                                          DisplayMemberPath="Name"></ComboBox>
+                                          DisplayMemberPath="Name">
+                                </ComboBox>
                             </DockPanel>
 
                             <Grid>
@@ -418,12 +429,13 @@
                                     <ColumnDefinition></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
 
-                                <DockPanel 
-                              
-                              Grid.ColumnSpan="2" Margin="0 6 0 0">
+                                <DockPanel
+
+                                    Grid.ColumnSpan="2" Margin="0 6 0 0">
                                     <TextBlock Width="80" Text="Level :"></TextBlock>
                                     <ComboBox x:Name="cbFloorLevel"
-                                              DisplayMemberPath="Name"></ComboBox>
+                                              DisplayMemberPath="Name">
+                                    </ComboBox>
                                 </DockPanel>
 
                             </Grid>

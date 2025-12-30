@@ -314,6 +314,7 @@ namespace ProjectApp.ModelFromCad
 
                     var height = Convert.ToInt32(beamInfoCollection.Height);
                     var width = Convert.ToInt32(beamInfoCollection.Width);
+                    var baseOffset =Double.Parse(txtBeamOffset.Text) ;
 
                     var elementType = beamInfoCollection.ElementType = GetElementType(width, height);
 
@@ -356,6 +357,17 @@ namespace ProjectApp.ModelFromCad
                                 StructuralType.Beam);
 
                             // var mark = beam.SetParameterValueByName(BuiltInParameter.ALL_MODEL_MARK, beamInfoCollection.Mark);
+                            var startOffsetParam = beam.LookupParameter("Start Level Offset");
+                            if (startOffsetParam is { IsReadOnly: false })
+                            {
+                                startOffsetParam.Set(baseOffset.MmToFoot());
+                            }
+
+                            var endOffsetParam = beam.LookupParameter("End Level Offset");
+                            if (endOffsetParam is { IsReadOnly: false })
+                            {
+                                endOffsetParam.Set(baseOffset.MmToFoot());
+                            }
                         }
                         catch
                         {

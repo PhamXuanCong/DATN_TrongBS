@@ -10,9 +10,7 @@
         Width="600">
     <FrameworkElement.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../../Utils/Style/Style.xaml"></ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>
+            
 
             <Style x:Key="NiceButtonStyle" TargetType="Button">
                 <!-- Kích thước và font cơ bản -->
@@ -71,166 +69,6 @@
                 </Setter>
             </Style>
 
-            <!-- ================= TEXTBOX ================= -->
-            <Style TargetType="TextBox">
-                <Setter Property="Height" Value="28" />
-                <Setter Property="Padding" Value="6,4" />
-                <Setter Property="FontSize" Value="12" />
-                <Setter Property="Background" Value="White" />
-                <Setter Property="Foreground" Value="Black" />
-                <Setter Property="BorderBrush" Value="#FFB8B8B8" />
-                <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="SnapsToDevicePixels" Value="True" />
-
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="TextBox">
-                            <Border x:Name="border"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="4">
-                                <ScrollViewer x:Name="PART_ContentHost"
-                                              Margin="0"
-                                              HorizontalScrollBarVisibility="Hidden"
-                                              VerticalScrollBarVisibility="Hidden" />
-                            </Border>
-
-                            <ControlTemplate.Triggers>
-                                <!-- Hover -->
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border"
-                                            Property="BorderBrush"
-                                            Value="#FF7EB4EA" />
-                                </Trigger>
-
-                                <!-- Focus -->
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="border"
-                                            Property="BorderBrush"
-                                            Value="#FF007ACC" />
-                                </Trigger>
-
-                                <!-- Disable -->
-                                <Trigger Property="IsEnabled" Value="False">
-                                    <Setter TargetName="border" Property="Background" Value="#FFF2F2F2" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFD0D0D0" />
-                                    <Setter Property="Foreground" Value="#FF808080" />
-                                </Trigger>
-
-                                <!-- Lỗi validation -->
-                                <Trigger Property="Validation.HasError" Value="True">
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFE51400" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <!-- ================= COMBOBOX ================= -->
-            <Style TargetType="ComboBox">
-                <Setter Property="Height" Value="28" />
-                <Setter Property="MinWidth" Value="80" />
-                <Setter Property="FontSize" Value="12" />
-                <Setter Property="Padding" Value="6,3" />
-                <Setter Property="Background" Value="White" />
-                <Setter Property="Foreground" Value="Black" />
-                <Setter Property="BorderBrush" Value="#FFB8B8B8" />
-                <Setter Property="BorderThickness" Value="1" />
-                <Setter Property="SnapsToDevicePixels" Value="True" />
-                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
-                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-                <Setter Property="IsEditable" Value="False" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="ComboBox">
-                            <Grid>
-                                <Border x:Name="border"
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        CornerRadius="4">
-                                    <DockPanel>
-                                        <!-- Nội dung -->
-                                        <ContentPresenter x:Name="ContentSite"
-                                                          Margin="{TemplateBinding Padding}"
-                                                          VerticalAlignment="Center"
-                                                          HorizontalAlignment="Left"
-                                                          RecognizesAccessKey="True" />
-
-                                        <!-- Nút mũi tên -->
-                                        <ToggleButton x:Name="DropDownToggle"
-                                                      DockPanel.Dock="Right"
-                                                      Focusable="False"
-                                                      IsChecked="{TemplateBinding IsDropDownOpen}"
-                                                      ClickMode="Press"
-                                                      Width="24"
-                                                      Background="Transparent"
-                                                      BorderThickness="0">
-                                            <Path Data="M 0 0 L 4 4 L 8 0 Z"
-                                                  Width="8" Height="4"
-                                                  HorizontalAlignment="Center"
-                                                  VerticalAlignment="Center"
-                                                  Stretch="Uniform"
-                                                  Fill="#FF444444" />
-                                        </ToggleButton>
-                                    </DockPanel>
-                                </Border>
-
-                                <!-- Popup danh sách -->
-                                <Popup x:Name="PART_Popup"
-                                       Placement="Bottom"
-                                       IsOpen="{TemplateBinding IsDropDownOpen}"
-                                       AllowsTransparency="True"
-                                       Focusable="False"
-                                       PopupAnimation="Slide">
-                                    <Border Margin="0,2,0,0"
-                                            Background="White"
-                                            BorderBrush="#FFB8B8B8"
-                                            BorderThickness="1"
-                                            CornerRadius="4">
-                                        <ScrollViewer Margin="0"
-                                                      SnapsToDevicePixels="True">
-                                            <StackPanel IsItemsHost="True"
-                                                        KeyboardNavigation.DirectionalNavigation="Contained" />
-                                        </ScrollViewer>
-                                    </Border>
-                                </Popup>
-                            </Grid>
-
-                            <ControlTemplate.Triggers>
-                                <!-- Hover -->
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border"
-                                            Property="BorderBrush"
-                                            Value="#FF7EB4EA" />
-                                </Trigger>
-
-                                <!-- Focus -->
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="border"
-                                            Property="BorderBrush"
-                                            Value="#FF007ACC" />
-                                </Trigger>
-
-                                <!-- Disabled -->
-                                <Trigger Property="IsEnabled" Value="False">
-                                    <Setter TargetName="border" Property="Background" Value="#FFF2F2F2" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FFD0D0D0" />
-                                    <Setter Property="Foreground" Value="#FF808080" />
-                                </Trigger>
-
-                                <!-- Khi dropdown mở -->
-                                <Trigger Property="IsDropDownOpen" Value="True">
-                                    <Setter TargetName="border" Property="BorderBrush" Value="#FF007ACC" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
             <Style TargetType="TextBlock">
                 <Setter Property="VerticalAlignment" Value="Center"></Setter>
             </Style>
@@ -240,18 +78,30 @@
 
     <StackPanel Margin="6">
 
-        <DataGrid Height="400">
+        <DataGrid Height="400" x:Name="dgSchedule" AutoGenerateColumns="False"> 
             <DataGrid.Columns>
-                <DataGridTemplateColumn Width="150">
+                <DataGridTemplateColumn Width="300">
                     <DataGridTemplateColumn.Header>
-                        <TextBlock Text="Type Name"></TextBlock>
+                        <TextBlock Text="Name"></TextBlock>
                     </DataGridTemplateColumn.Header>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
                 <DataGridTemplateColumn Width="200">
                     <DataGridTemplateColumn.Header>
-                        <TextBlock Text="Volume"></TextBlock>
+                        <TextBlock Text="Volume (m3)"></TextBlock>
                     </DataGridTemplateColumn.Header>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Volume}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
@@ -259,11 +109,8 @@
         <StackPanel Orientation="Horizontal"
                     Margin="0 6 0 0"
                     HorizontalAlignment="Right">
-            <Button Content="Export"
-                    Margin="0 0 6 0"
-                    Style="{StaticResource NiceButtonStyle}">
-            </Button>
             <Button Content="Close"
+                    Click="ButtonBase_OnClick"
                     Style="{StaticResource NiceButtonStyle}">
             </Button>
         </StackPanel>
